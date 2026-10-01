@@ -131,11 +131,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         viewModelScope.launch {
-            // Start listening to ntfy topic and backup topic if paired
+            // Start listening to ntfy topic, backup topic, and tilt topic if paired
             val currentTopic = prefs.ntfyTopic.first()
             val backupTopic = prefs.backupNtfyTopic.first()
-            if (currentTopic.isNotBlank()) {
-                ntfyManager.startListening(currentTopic, backupTopic)
+            val savedTiltTopic = prefs.tiltTopic.first()
+            if (currentTopic.isNotBlank() || savedTiltTopic.isNotBlank()) {
+                ntfyManager.startListening(currentTopic, backupTopic, savedTiltTopic)
             }
             // Auto check battery on startup
             checkBattery()
@@ -169,7 +170,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     ) {
         viewModelScope.launch {
             prefs.savePairingData(topic, phone, password, ip, isSimulated, backupPhone, backupTopic, tiltTopic)
-            ntfyManager.startListening(topic, backupTopic)
+            val effectiveTiltTopic = if (tiltTopic.isNotBlank()) tiltTopic else prefs.tiltTopic.first()
+            ntfyManager.startListening(topic, backupTopic, effectiveTiltTopic)
             checkBattery()
         }
     }
@@ -182,7 +184,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     ) {
         viewModelScope.launch {
             prefs.saveBackupViewerData(tiltTopic, viewerPhone, ip, isSimulated)
-            ntfyManager.startListening(tiltTopic, "")
+            ntfyManager.startListening(tiltTopic, "", tiltTopic)
         }
     }
 

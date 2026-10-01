@@ -215,8 +215,8 @@ fun AutoAlertApp(
             initialBackupPhone = backupDriverPhone,
             isAlreadyPaired = false,
             isSimulationMode = isSimulationMode,
-            onPairingSuccess = { topic, phone, pwd, ip, isSimulated, backupPhone, backupTopic ->
-                viewModel.savePairingData(topic, phone, pwd, ip, isSimulated, backupPhone, backupTopic)
+            onPairingSuccess = { topic, phone, pwd, ip, isSimulated, backupPhone, backupTopic, tiltTopic ->
+                viewModel.savePairingData(topic, phone, pwd, ip, isSimulated, backupPhone, backupTopic, tiltTopic)
             },
             onLinkViewerSuccess = { tiltTopic, viewerPhone, ip, isSim ->
                 viewModel.saveBackupViewerData(tiltTopic, viewerPhone, ip, isSim)

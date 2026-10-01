@@ -113,7 +113,7 @@ fun PairingScreen(
     initialBackupPhone: String = "",
     isAlreadyPaired: Boolean = false,
     isSimulationMode: Boolean = false,
-    onPairingSuccess: (topic: String, phone: String, password: String, ip: String, isSimulated: Boolean, backupPhone: String, backupTopic: String) -> Unit,
+    onPairingSuccess: (topic: String, phone: String, password: String, ip: String, isSimulated: Boolean, backupPhone: String, backupTopic: String, tiltTopic: String) -> Unit,
     onLinkViewerSuccess: (tiltTopic: String, viewerPhone: String, ip: String, isSimulated: Boolean) -> Unit = { _, _, _, _ -> },
     onSkipPairing: () -> Unit = {},
     onOpenWifiSetup: () -> Unit = {}
@@ -851,7 +851,8 @@ fun PairingScreen(
                                         resolvedIp,
                                         isSimulationMode,
                                         backupPhoneLabel.trim(),
-                                        generatedBackupTopic
+                                        generatedBackupTopic,
+                                        result.tiltTopic
                                     )
                                 } else {
                                     DeviceDiscoveryManager.releaseNetworkBinding(context)

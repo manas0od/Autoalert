@@ -219,6 +219,7 @@ class NtfyManager(
     private val serviceScope = CoroutineScope(Dispatchers.IO)
     private var currentTopic: String = ""
     private var currentBackupTopic: String = ""
+    private var currentTiltTopic: String = ""
 
     private var activeCall: okhttp3.Call? = null
     private var networkCallback: ConnectivityManager.NetworkCallback? = null
@@ -236,7 +237,7 @@ class NtfyManager(
                         Log.d("NtfyManager", "Network available. Releasing any local process network binding.")
                         DeviceDiscoveryManager.releaseNetworkBinding(context)
                         // Trigger immediate reconnect if listening
-                        if (currentTopic.isNotBlank() && subscribeJob?.isActive == true) {
+                        if ((currentTopic.isNotBlank() || currentTiltTopic.isNotBlank()) && subscribeJob?.isActive == true) {
                             reconnectStream()
                         }
                     }
@@ -277,7 +278,7 @@ class NtfyManager(
     }
 
     private fun reconnectStream() {
-        if (currentTopic.isBlank()) return
+        if (currentTopic.isBlank() && currentTiltTopic.isBlank()) return
         serviceScope.launch {
             try {
                 activeCall?.cancel()
@@ -287,22 +288,24 @@ class NtfyManager(
         }
     }
 
-    fun startListening(topic: String, backupTopic: String = "") {
-        if (topic.isBlank()) return
-        currentTopic = topic
-        currentBackupTopic = if (backupTopic.isNotBlank()) backupTopic else "${topic}-backup"
+    fun startListening(topic: String, backupTopic: String = "", tiltTopic: String = "") {
+        if (topic.isBlank() && tiltTopic.isBlank()) return
+        currentTopic = topic.trim()
+        currentBackupTopic = if (backupTopic.isNotBlank()) backupTopic.trim() else if (currentTopic.isNotBlank()) "${currentTopic}-backup" else ""
+        currentTiltTopic = tiltTopic.trim()
         stopListening(clearTopic = false)
 
         // Ensure process is unbound from any local Wi-Fi pairing network
         DeviceDiscoveryManager.releaseNetworkBinding(context)
 
         subscribeJob = serviceScope.launch {
-            val streamTopic = if (currentBackupTopic.isNotBlank() && currentBackupTopic != currentTopic) {
-                "$currentTopic,$currentBackupTopic"
-            } else {
-                currentTopic
+            val distinctTopics = listOf(currentTopic, currentBackupTopic, currentTiltTopic)
+                .filter { it.isNotBlank() }
+                .distinct()
+            val streamTopic = distinctTopics.joinToString(",")
+            if (streamTopic.isNotBlank()) {
+                listenToNtfyTopicStream(streamTopic)
             }
-            listenToNtfyTopicStream(streamTopic)
         }
     }
 
@@ -310,6 +313,7 @@ class NtfyManager(
         if (clearTopic) {
             currentTopic = ""
             currentBackupTopic = ""
+            currentTiltTopic = ""
         }
         try {
             activeCall?.cancel()
@@ -369,7 +373,7 @@ class NtfyManager(
                                     val time = json.optLong("time", System.currentTimeMillis() / 1000) * 1000
                                     val title = json.optString("title", "Auto-Rickshaw Call")
                                     val messageStr = json.optString("message", "Service requested!")
-                                    val msgTopic = json.optString("topic", topic)
+                                    val msgTopic = json.optString("topic").ifBlank { currentTopic.ifBlank { currentTiltTopic } }
 
                                     val tagsList = mutableListOf<String>()
                                     val tagsArray = json.optJSONArray("tags")
@@ -448,6 +452,7 @@ class NtfyManager(
 
         val isTilt = msg.topic.endsWith("-tilt") ||
                 msg.topic.contains("tilt") ||
+                (currentTiltTopic.isNotBlank() && msg.topic.equals(currentTiltTopic, ignoreCase = true)) ||
                 msg.title.contains("Tilt", ignoreCase = true) ||
                 msg.title.contains("Rollover", ignoreCase = true) ||
                 msg.title.contains("Safety", ignoreCase = true) ||

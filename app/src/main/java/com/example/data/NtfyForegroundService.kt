@@ -34,11 +34,12 @@ class NtfyForegroundService : Service() {
         job = serviceScope.launch {
             val topic = app.preferences.ntfyTopic.first()
             val backupTopic = app.preferences.backupNtfyTopic.first()
-            if (topic.isNotBlank()) {
+            val tiltTopic = app.preferences.tiltTopic.first()
+            if (topic.isNotBlank() || tiltTopic.isNotBlank()) {
                 if (ntfyManager == null) {
                     ntfyManager = NtfyManager(applicationContext, NotificationRepository(app.database.notificationDao()))
                 }
-                ntfyManager?.startListening(topic, backupTopic)
+                ntfyManager?.startListening(topic, backupTopic, tiltTopic)
             }
         }
 
