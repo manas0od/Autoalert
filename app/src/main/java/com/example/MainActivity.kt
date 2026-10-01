@@ -131,6 +131,7 @@ fun AutoAlertApp(
     val lastKnownBatteryPercent by viewModel.lastKnownBatteryPercent.collectAsState()
     val lastKnownBatteryTimestamp by viewModel.lastKnownBatteryTimestamp.collectAsState()
     val isBackupViewer by viewModel.isBackupViewer.collectAsState()
+    val tiltTopic by viewModel.tiltTopic.collectAsState()
 
     val strings = LocalStrings.current
     var showSplash by remember { mutableStateOf(true) }
@@ -166,8 +167,8 @@ fun AutoAlertApp(
     }
 
     // Start background listening foreground service when topic is available
-    LaunchedEffect(ntfyTopic) {
-        if (ntfyTopic.isNotBlank()) {
+    LaunchedEffect(ntfyTopic, tiltTopic) {
+        if (ntfyTopic.isNotBlank() || tiltTopic.isNotBlank()) {
             try {
                 val serviceIntent = Intent(context, NtfyForegroundService::class.java)
                 ContextCompat.startForegroundService(context, serviceIntent)
@@ -339,6 +340,8 @@ fun AutoAlertApp(
                             isSimulationMode = isSimulationMode,
                             isBackupViewer = isBackupViewer,
                             onUpdatePhone = { viewModel.updateDriverPhone(it) },
+                            onUpdateTiltTopic = { viewModel.updateTiltTopic(it) },
+                            onReRegisterSuccess = { phone, newTiltTopic -> viewModel.handleReRegisterSuccess(phone, newTiltTopic) },
                             onUpdateBackupDriverPhone = { viewModel.updateBackupDriverPhone(it) },
                             onUpdateAppLanguage = { viewModel.updateAppLanguage(it) },
                             onUpdateDeviceIp = { viewModel.updateDeviceIp(it) },

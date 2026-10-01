@@ -200,6 +200,35 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun updateTiltTopic(newTiltTopic: String) {
+        viewModelScope.launch {
+            if (newTiltTopic.isNotBlank()) {
+                prefs.updateTiltTopic(newTiltTopic)
+                val isViewer = prefs.isBackupViewer.first()
+                if (isViewer) {
+                    ntfyManager.startListening(newTiltTopic, "", newTiltTopic)
+                } else {
+                    val currentTopic = prefs.ntfyTopic.first()
+                    val backupTopic = prefs.backupNtfyTopic.first()
+                    ntfyManager.startListening(currentTopic, backupTopic, newTiltTopic)
+                }
+            }
+        }
+    }
+
+    fun handleReRegisterSuccess(phone: String, newTiltTopic: String) {
+        viewModelScope.launch {
+            prefs.updatePhoneLabel(phone)
+            if (newTiltTopic.isNotBlank()) {
+                prefs.updateTiltTopic(newTiltTopic)
+            }
+            val currentTopic = prefs.ntfyTopic.first()
+            val backupTopic = prefs.backupNtfyTopic.first()
+            val effectiveTilt = if (newTiltTopic.isNotBlank()) newTiltTopic else prefs.tiltTopic.first()
+            ntfyManager.startListening(currentTopic, backupTopic, effectiveTilt)
+        }
+    }
+
     fun updateBackupDriverPhone(phone: String) {
         viewModelScope.launch {
             prefs.updateBackupDriverPhone(phone)

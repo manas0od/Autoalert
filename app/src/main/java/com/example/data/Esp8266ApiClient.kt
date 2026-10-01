@@ -106,7 +106,7 @@ class Esp8266ApiClient {
                     val status = json.optString("status", "")
                     val topic = json.optString("topic", "")
                     val espBackupTopic = json.optString("backup_topic", if (topic.isNotEmpty()) "${topic}-backup" else backupTopic)
-                    val espTiltTopic = json.optString("tiltTopic", json.optString("tilt_topic", if (topic.isNotEmpty()) "${topic}-tilt" else ""))
+                    val espTiltTopic = json.optString("tiltTopic", json.optString("tilt_topic", ""))
                     val msg = json.optString("message", "Paired successfully")
 
                     if (status == "ok" || topic.isNotEmpty()) {

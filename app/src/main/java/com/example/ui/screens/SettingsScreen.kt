@@ -87,6 +87,8 @@ fun SettingsScreen(
     isSimulationMode: Boolean = false,
     isBackupViewer: Boolean = false,
     onUpdatePhone: (String) -> Unit,
+    onUpdateTiltTopic: (String) -> Unit = {},
+    onReRegisterSuccess: (phone: String, tiltTopic: String) -> Unit = { _, _ -> },
     onUpdateBackupDriverPhone: (String) -> Unit = {},
     onUpdateAppLanguage: (String) -> Unit = {},
     onUpdateDeviceIp: (String) -> Unit,
@@ -1167,6 +1169,7 @@ fun SettingsScreen(
 
                                 isVerifyingPrimary = false
                                 if (pairRes.success) {
+                                    onReRegisterSuccess(newPrimaryPhoneNumber, pairRes.tiltTopic)
                                     onUpdatePhone(newPrimaryPhoneNumber)
                                     onUpdateDeviceIp(editableIp)
                                     showChangePhoneDialog = false
@@ -1395,6 +1398,9 @@ fun SettingsScreen(
                                 )
                                 isRevokingViewers = false
                                 if (result.success) {
+                                    if (result.tiltTopic.isNotBlank()) {
+                                        onUpdateTiltTopic(result.tiltTopic)
+                                    }
                                     showRevokeViewersDialog = false
                                     statusFeedback = strings.revokeAllViewersSuccess
                                 } else {

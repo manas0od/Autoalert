@@ -158,6 +158,17 @@ class AutoAlertPreferences(private val context: Context) {
         }
     }
 
+    suspend fun updateTiltTopic(newTiltTopic: String) {
+        context.dataStore.edit { prefs ->
+            if (newTiltTopic.isNotBlank()) {
+                prefs[TILT_TOPIC] = newTiltTopic
+                if (prefs[IS_BACKUP_VIEWER] == true) {
+                    prefs[NTFY_TOPIC] = newTiltTopic
+                }
+            }
+        }
+    }
+
     suspend fun updateBackupDriverPhone(backupPhone: String) {
         context.dataStore.edit { prefs ->
             prefs[BACKUP_DRIVER_PHONE] = backupPhone

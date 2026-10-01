@@ -141,4 +141,44 @@ class NtfyTiltSubscriptionTest {
         assertEquals("Pending", saved?.status)
         assertTrue(saved?.requestId?.startsWith("REQ-") == true)
     }
+
+    @Test
+    fun testTiltTopicUpdateReconfiguresSubscription() = runBlocking {
+        val primaryTopic = "autoalert-driver-303"
+        val oldTiltTopic = "autoalert-tilt-old"
+        val newTiltTopic = "autoalert-tilt-new"
+
+        // Initial setup
+        ntfyManager.startListening(
+            topic = primaryTopic,
+            backupTopic = "$primaryTopic-backup",
+            tiltTopic = oldTiltTopic
+        )
+
+        // After revoke-viewers, new tilt topic is configured
+        ntfyManager.startListening(
+            topic = primaryTopic,
+            backupTopic = "$primaryTopic-backup",
+            tiltTopic = newTiltTopic
+        )
+
+        // Message on new tilt topic must be recognized as safety alert
+        val newTiltMsg = NtfyMessage(
+            id = "msg_new_tilt_004",
+            time = System.currentTimeMillis(),
+            event = "message",
+            topic = newTiltTopic,
+            title = "SAFETY ALERT: Vehicle Tilt",
+            message = "Vehicle tilt detected: 52.4 degrees",
+            tags = listOf("batt80")
+        )
+
+        val handled = ntfyManager.handleIncomingMessage(newTiltMsg)
+        assertTrue(handled)
+
+        val notifications = repository.allNotifications.first()
+        val saved = notifications.find { it.message.contains("52.4 degrees") }
+        assertNotNull(saved)
+        assertEquals("Safety Alert", saved?.status)
+    }
 }
