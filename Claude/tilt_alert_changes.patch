@@ -1,0 +1,123 @@
+--- cur2.ino	2026-10-01 06:38:58.900577578 +0000
++++ final_new.ino	2026-10-01 06:40:04.480583468 +0000
+@@ -187,6 +187,23 @@
+ unsigned long tiltAboveSince = 0;
+ unsigned long lastTiltDebug = 0;
+ 
++// ---------- TILT SAFETY ALERT DELIVERY ----------
++// Detection (checkMpuTilt) and delivery are separate on purpose. tiltAlarmLatched
++// guarantees ONE event per excursion above TILT_TRIGGER_ANGLE; this block makes sure
++// that event's ntfy message actually REACHES tiltTopic. Once a send succeeds the alert
++// is finished - it is never sent again for the same event, however long the vehicle
++// stays tilted. If the send fails (or Wi-Fi is down / failing over) the alert stays
++// pending and is retried every TILT_ALERT_RETRY_MS until it succeeds or is too old
++// to be useful.
++const unsigned long TILT_ALERT_RETRY_MS   = 5UL * 1000UL;        // gap between FAILED attempts (the loop keeps sensing in between)
++const unsigned long TILT_ALERT_MAX_AGE_MS = 10UL * 60UL * 1000UL; // stop retrying a stale event after 10 minutes
++bool tiltAlertPending = false;           // an event was confirmed but not yet delivered
++float tiltAlertAngle = 0.0;              // angle at the moment the event was confirmed
++unsigned long tiltAlertDetectedAt = 0;   // millis() at confirmation
++unsigned long tiltAlertNextTry = 0;      // millis() of the next allowed attempt
++unsigned long tiltAlertLastNote = 0;     // rate-limits "waiting..." serial messages
++int tiltAlertAttempts = 0;
++
+ 
+ // Dual-WiFi (primary/safety) failover timing - see header comment above.
+ const unsigned long PRIMARY_TIMEOUT_MS      = 60UL * 1000UL;    // once disconnected, keep trying ONLY primary for up to 1 min before falling back to safety
+@@ -471,9 +488,69 @@
+   calibrateMpuNormalPosition();
+ }
+ 
++// Sends the pending tilt alert to the SEPARATE safety topic (tiltTopic) - never to storedTopic.
++// Uses the project's existing sendNtfyMessage(), so battery % rides along as the usual
++// "battNN" tag and the HTTPS/ntfy code is not duplicated. Cheap no-op when nothing is pending.
++void serviceTiltAlertDelivery() {
++  if (!tiltAlertPending) return;
++
++  unsigned long now = millis();
++
++  if (now - tiltAlertDetectedAt >= TILT_ALERT_MAX_AGE_MS) {
++    Serial.println("SAFETY ALERT: giving up - the event is older than 10 minutes and was never delivered.");
++    tiltAlertPending = false;
++    return;
++  }
++
++  if ((long)(now - tiltAlertNextTry) < 0) return;   // not time yet
++
++  if (!isPaired || tiltTopic.length() == 0) {
++    if (now - tiltAlertLastNote >= 10000UL) {
++      tiltAlertLastNote = now;
++      Serial.println("SAFETY ALERT: NOT SENT - device is not paired, so there is no safety topic yet. Will retry.");
++    }
++    tiltAlertNextTry = now + TILT_ALERT_RETRY_MS;
++    return;
++  }
++
++  if (WiFi.status() != WL_CONNECTED) {
++    if (now - tiltAlertLastNote >= 10000UL) {
++      tiltAlertLastNote = now;
++      Serial.println("SAFETY ALERT: NOT SENT YET - Wi-Fi is down (failover to the safety network may take about a minute). Will send as soon as it reconnects.");
++    }
++    tiltAlertNextTry = now + 1000UL;                // cheap re-check, sends the moment Wi-Fi returns
++    return;
++  }
++
++  tiltAlertAttempts++;
++  unsigned long ageSec = (now - tiltAlertDetectedAt) / 1000UL;
++
++  String message = "Vehicle tilt detected: " + String(tiltAlertAngle, 1) +
++                   " degrees. The " + String(TILT_TRIGGER_ANGLE, 0) +
++                   " degree safety threshold was reached. Location: " + locationContext() + ".";
++  if (ageSec >= 5) {
++    message += " (Detected " + String(ageSec) + " s ago; delivery was delayed.)";
++  }
++
++  bool sent = sendNtfyMessage(tiltTopic, "SAFETY ALERT: Vehicle Tilt", message);
++
++  if (sent) {
++    tiltAlertPending = false;                       // delivered: this event is finished
++    Serial.printf("SAFETY ALERT: ntfy notification SENT (attempt %d).\n", tiltAlertAttempts);
++  } else {
++    tiltAlertNextTry = millis() + TILT_ALERT_RETRY_MS;
++    Serial.printf("SAFETY ALERT: ntfy notification FAILED (attempt %d) - will retry in %lu s.\n",
++                  tiltAlertAttempts, TILT_ALERT_RETRY_MS / 1000UL);
++  }
++}
++
+ void checkMpuTilt() {
+   if (!mpuReady || !tiltCalibrationValid) return;
+ 
++  // Retry an undelivered alert on every loop pass, even if the sensor sample below is
++  // skipped (sample interval not elapsed, or acceleration outside the gravity window).
++  serviceTiltAlertDelivery();
++
+   unsigned long now = millis();
+   if (now - lastTiltSample < TILT_SAMPLE_MS) return;
+   lastTiltSample = now;
+@@ -531,17 +608,15 @@
+         Serial.printf("MPU SAFETY: tilt %.1f degrees >= %.1f degrees for %lu ms\n",
+                       angle, TILT_TRIGGER_ANGLE, TILT_CONFIRM_MS);
+ 
+-        if (isPaired && tiltTopic.length() > 0 && WiFi.status() == WL_CONNECTED) {
+-          String message = "Vehicle tilt detected: " + String(angle, 1) +
+-                           " degrees from the calibrated normal position. " +
+-                           "Safety alert triggered. Location: " + locationContext() + ".";
+-          bool sent = sendNtfyMessage(tiltTopic,
+-                                      "SAFETY ALERT: Vehicle Tilt / Rollover",
+-                                      message);
+-          Serial.println(sent ? "MPU safety notification sent." : "MPU safety notification FAILED.");
+-        } else {
+-          Serial.println("MPU safety alert detected, but no internet/tilt topic is available.");
+-        }
++        // Runs ONCE per event: tiltAlarmLatched (set above) blocks this branch until the
++        // vehicle comes back below TILT_RESET_ANGLE.
++        Serial.printf("SAFETY ALERT: Tilt detected at %.1f degrees\n", angle);
++        tiltAlertAngle = angle;
++        tiltAlertDetectedAt = now;
++        tiltAlertNextTry = now;          // first attempt happens immediately
++        tiltAlertAttempts = 0;
++        tiltAlertPending = true;
++        serviceTiltAlertDelivery();
+       }
+     } else if (angle < TILT_CANCEL_ANGLE) {
+       // It was only a temporary excursion above the trigger threshold.
