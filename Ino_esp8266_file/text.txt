@@ -1,0 +1,962 @@
+Analyzing sketch dependencies ...
+Analyzing sketch_oct01b.cpp
+Command line:
+/files/sdkEsp8266/tools/xtensa-lx106-elf/bin/xtensa-lx106-elf-g++
+-iprefix
+/files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/
+-D__ets__
+-DICACHE_FLASH
+-U__STRICT_ANSI__
+-D_GNU_SOURCE
+-c
+-H
+-w
+-Os
+-g
+-mlongcalls
+-mtext-section-literals
+-fno-rtti
+-falign-functions=4
+-std=gnu++17
+-MMD
+-ffunction-sections
+-fdata-sections
+-fno-exceptions
+-DNONOSDK22x_190703=1
+-DF_CPU=80000000L
+-DARDUINO=10607
+-DARDUINO_ESP8266_NODEMCU_ESP12E
+-DARDUINO_ARCH_ESP8266
+-DARDUINO_BOARD="ESP8266_NODEMCU_ESP12E"
+-DESP8266
+-DFLASHMODE_DIO
+-DLED_BUILTIN=2
+-DLWIP_OPEN_SRC
+-DTCP_MSS=1460
+-DLWIP_FEATURES=0
+-DLWIP_IPV6=0
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/variants/nodemcu
+-I/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include
+-I/files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include
+-I/files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include-fixed
+-I/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0
+-I/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include
+-I/files/sdkEsp8266/tools/xtensa-lx106-elf/include
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ArduinoOTA
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/DNSServer/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/EEPROM
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266AVRISP/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266HTTPClient/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266HTTPUpdateServer/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266LLMNR
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266NetBIOS
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266SSDP
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266SdFat/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFiMesh/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266httpUpdate/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266mDNS/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/Ethernet/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/FSTools
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/GDBStub/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/Hash/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/I2S/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/LittleFS/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/Netdump/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/SD/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/SDFS/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/SPI
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/SPISlave/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/Servo/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/SoftwareSerial/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/TFT_Touch_Shield_V2
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/Ticker/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/Wire
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/esp8266/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/lwIP_Ethernet/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/lwIP_PPP/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/lwIP_enc28j60/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/lwIP_w5100/src
+-I/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/lwIP_w5500/src
+-I/ArduinoJson/src
+-I/AsyncWiFiManagerSimple/src
+-I/ESPConnect/src
+-I/JustWifi/src
+-I/WiFiManager
+-I/Adafruit_MPU6050
+-I/Adafruit_BusIO
+-I/Adafruit_Unified_Sensor
+-I/Adafruit_GFX_Library
+-I/Adafruit_SSD1306
+-I/MPU6050/src
+-I/MPU6050_light/src
+-I/MPU9250_WE/src
+-I/files/libraries/Ethernet/src
+-I/files/libraries/Firmata
+-I/files/libraries/Keyboard/src
+-I/files/libraries/LiquidCrystal/src
+-I/files/libraries/Mouse/src
+-I/files/libraries/SD/src
+-I/files/libraries/Servo/src
+-I/files/libraries/Stepper/src
+-I/files/libraries/TFT/src
+-I/files/build
+-I/files/sketch
+/files/build/sketch_oct01b.cpp
+Output:
+. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstdlib
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/c++config.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/os_defines.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/cpu_defines.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/pstl/pstl_config.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/stdlib.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/ieeefp.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/_ansi.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/newlib.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/_newlib_version.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/config.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/ieeefp.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/features.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/include/xtensa/config/core-isa.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/reent.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/_ansi.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/_types.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/_types.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/_default_types.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/lock.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/assert.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/pgmspace.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stdint.h
+......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/stdint.h
+.......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/_intsup.h
+.......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/_stdint.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/cdefs.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/stdlib.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/alloca.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/_locale.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/std_abs.h
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stdbool.h
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stdarg.h
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/stdio.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/types.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/endian.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/_endian.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/select.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/_sigset.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/_timeval.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/timespec.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/_timespec.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/_pthreadtypes.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/sched.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/types.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/stdio.h
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/string.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/strings.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/string.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/math.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cmath
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/cpp_type_traits.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ext/type_traits.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/math.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/ieeefp.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/specfun.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_algobase.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/functexcept.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/exception_defines.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ext/numeric_traits.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_pair.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/move.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/type_traits
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_iterator_base_types.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_iterator_base_funcs.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/concept_check.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/debug/assertions.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_iterator.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/ptr_traits.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/debug/debug.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/predefined_ops.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/limits
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/gamma.tcc
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/special_function_util.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/bessel_function.tcc
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/beta_function.tcc
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/ell_integral.tcc
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/exp_integral.tcc
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/hypergeometric.tcc
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/legendre_function.tcc
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/modified_bessel_func.tcc
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/poly_hermite.tcc
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/poly_laguerre.tcc
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tr1/riemann_zeta.tcc
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/umm_malloc/umm_malloc_cfgport.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/stdlib_noniso.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/binary.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/esp8266_peri.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/c_types.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/esp8266_undocumented.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/eagle_soc.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/spi_flash.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/spi_flash_geometry.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/twi.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/core_esp8266_features.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/core_esp8266_version.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/core_version.h
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/algorithm
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/utility
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_relops.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/initializer_list
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_algo.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstdlib
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/algorithmfwd.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_heap.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_tempbuf.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_construct.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/new
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/exception
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/exception.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/exception_ptr.h
+......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/cxxabi_init_exception.h
+.......... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/typeinfo
+.......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/hash_bytes.h
+......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/new
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/nested_exception.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/uniform_int_dist.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/pstl/glue_algorithm_defs.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/functional
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_function.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/backward/binders.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/tuple
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/array
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/range_access.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/iterator_concepts.h
+......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/concepts
+......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/range_cmp.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/uses_allocator.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/invoke.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/functional_hash.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/refwrap.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/std_function.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/unordered_map
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/allocator.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/c++allocator.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ext/new_allocator.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/memoryfwd.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ext/alloc_traits.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/alloc_traits.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ext/aligned_buffer.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/hashtable.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/hashtable_policy.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/node_handle.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/optional
+......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/enable_special_members.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/unordered_map.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/erase_if.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/vector
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_uninitialized.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_vector.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_bvector.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/vector.tcc
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/pstl/execution_defs.h
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstdlib
+.. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cmath
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/mmu_iram.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/assert.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/esp8266_undocumented.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/pgmspace.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/ets_sys.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/c_types.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/eagle_soc.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/osapi.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/user_config.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/WCharacter.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/ctype.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/ctype.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/WString.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/pgmspace.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstdlib
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstdint
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstring
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cctype
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/HardwareSerial.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/inttypes.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/time.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/time.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Stream.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/debug.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Print.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Printable.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/PolledTimeout.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/core_esp8266_features.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/coredecls.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/cont.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/uart.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Esp.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/spi_vendors.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/../../bootloaders/eboot/spi_vendors.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Updater.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/flash_utils.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/../../bootloaders/eboot/flash.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/MD5Builder.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/WString.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Stream.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/md5.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/debug.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/variants/nodemcu/pins_arduino.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/variants/nodemcu/../generic/common.h
+. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFi.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/wl_definitions.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/init.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/opt.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwipopts.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/gluedebug.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/debug.h
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/arch.h
+........ /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/arch/cc.h
+......... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip-err-t.h
+......... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/mem.h
+......... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/glue.h
+.......... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/user_interface.h
+........... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/os_type.h
+............ /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/ets_sys.h
+........... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/ipv4_addr.h
+............ /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/init.h
+............ /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/ip_addr.h
+............. /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/opt.h
+............. /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/def.h
+.............. /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/arch.h
+............. /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/ip4_addr.h
+............. /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/ip6_addr.h
+.............. /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/def.h
+........... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/queue.h
+........... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/user_config.h
+........... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/spi_flash.h
+........... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/gpio.h
+......... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/gluedebug.h
+......... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/ipv4_addr.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include-fixed/limits.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/arch/cc.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip-git-hash.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/time.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/time.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/_time.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/debug.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/tcpbase.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/IPAddress.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Printable.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiType.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/queue.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiSTA.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiGeneric.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/dns.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/err.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/memory
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_raw_storage_iter.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/ranges_uninitialized.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/iosfwd
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stringfwd.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/postypes.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cwchar
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/wchar.h
+......... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ext/atomicity.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/gthr.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/gthr-default.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/atomic_word.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ext/concurrence.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/unique_ptr.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/shared_ptr.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/shared_ptr_base.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/allocated_ptr.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/shared_ptr_atomic.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/atomic_base.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/atomic_lockfree_defines.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/backward/auto_ptr.h
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/pstl/glue_memory_defs.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/LwipIntf.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/netif.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/pbuf.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/stats.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/mem.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/memp.h
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/priv/memp_std.h
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/priv/memp_std.h
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/priv/memp_priv.h
+........ /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/priv/mem_priv.h
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/stats.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiAP.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/LwipDhcpServer.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstddef
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstring
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/ESP8266WiFiScan.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiClient.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Client.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Print.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/IPAddress.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/include/slist.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiServer.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Server.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiServerSecure.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiClientSecure.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiClientSecureBearSSL.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl.h
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_hash.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_hmac.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_kdf.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_rand.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_block.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_prf.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_aead.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_rsa.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_ec.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_ssl.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_x509.h
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/include/bearssl/bearssl_pem.h
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/BearSSLHelpers.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/StackThunk.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Updater.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/CertStoreBearSSL.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/BearSSLHelpers.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/FS.h
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiServerSecureBearSSL.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiClientSecure.h
+. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/ESP8266WebServer.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/detail/mimetable.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/Uri.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/detail/RequestHandler.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/ESP8266WebServer.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/assert.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/ESP8266WebServer-impl.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/libb64/cencode.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiServer.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiClient.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/ESP8266WebServer.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/base64.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/detail/RequestHandlersImpl.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/detail/RequestHandler.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/detail/mimetable.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/Uri.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/StreamDev.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/esp_priv.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/StreamString.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/Parsing-impl.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266HTTPClient/src/ESP8266HTTPClient.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiClientSecureBearSSL.h
+. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/LittleFS/src/LittleFS.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/FSImpl.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/flash_hal.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/LittleFS/src/../lib/littlefs/lfs.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/LittleFS/src/../lib/littlefs/lfs_util.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/assert.h
+. /ArduinoJson/src/ArduinoJson.h
+.. /ArduinoJson/src/ArduinoJson.hpp
+... /ArduinoJson/src/ArduinoJson/Configuration.hpp
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+... /ArduinoJson/src/ArduinoJson/Array/JsonArray.hpp
+.... /ArduinoJson/src/ArduinoJson/Array/ElementProxy.hpp
+..... /ArduinoJson/src/ArduinoJson/Variant/VariantRefBase.hpp
+...... /ArduinoJson/src/ArduinoJson/Variant/Converter.hpp
+....... /ArduinoJson/src/ArduinoJson/Namespace.hpp
+........ /ArduinoJson/src/ArduinoJson/Polyfills/preprocessor.hpp
+........ /ArduinoJson/src/ArduinoJson/version.hpp
+...... /ArduinoJson/src/ArduinoJson/Variant/JsonVariantConst.hpp
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+....... /ArduinoJson/src/ArduinoJson/Memory/ResourceManager.hpp
+........ /ArduinoJson/src/ArduinoJson/Memory/Allocator.hpp
+......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+........ /ArduinoJson/src/ArduinoJson/Memory/MemoryPoolList.hpp
+......... /ArduinoJson/src/ArduinoJson/Memory/MemoryPool.hpp
+.......... /ArduinoJson/src/ArduinoJson/Polyfills/assert.hpp
+.......... /ArduinoJson/src/ArduinoJson/Polyfills/integer.hpp
+......... /ArduinoJson/src/ArduinoJson/Polyfills/utility.hpp
+.......... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/conditional.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/decay.hpp
+............ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/enable_if.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/function_traits.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/integral_constant.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_array.hpp
+............ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_base_of.hpp
+............ /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_reference.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_class.hpp
+............ /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/declval.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_const.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_convertible.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_enum.hpp
+............ /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_floating_point.hpp
+............. /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_same.hpp
+............. /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_cv.hpp
+............ /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_integral.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_pointer.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_signed.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_unsigned.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/make_unsigned.hpp
+............ /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/type_identity.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_const.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/type_traits/void_t.hpp
+........ /ArduinoJson/src/ArduinoJson/Memory/StringPool.hpp
+......... /ArduinoJson/src/ArduinoJson/Memory/StringNode.hpp
+.......... /ArduinoJson/src/ArduinoJson/Polyfills/limits.hpp
+.......... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+......... /ArduinoJson/src/ArduinoJson/Strings/StringAdapters.hpp
+.......... /ArduinoJson/src/ArduinoJson/Strings/Adapters/RamString.hpp
+........... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+........... /ArduinoJson/src/ArduinoJson/Polyfills/attributes.hpp
+........... /ArduinoJson/src/ArduinoJson/Strings/StringAdapter.hpp
+.......... /ArduinoJson/src/ArduinoJson/Strings/Adapters/StringObject.hpp
+........... /ArduinoJson/src/ArduinoJson/Strings/StringTraits.hpp
+.......... /ArduinoJson/src/ArduinoJson/Strings/Adapters/FlashString.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/pgmspace.hpp
+............ /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+........ /ArduinoJson/src/ArduinoJson/Variant/VariantData.hpp
+......... /ArduinoJson/src/ArduinoJson/Misc/SerializedValue.hpp
+......... /ArduinoJson/src/ArduinoJson/Numbers/convertNumber.hpp
+.......... /ArduinoJson/src/ArduinoJson/Numbers/FloatTraits.hpp
+........... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+........... /ArduinoJson/src/ArduinoJson/Polyfills/alias_cast.hpp
+............ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+............ /ArduinoJson/src/ArduinoJson/Polyfills/math.hpp
+........... /ArduinoJson/src/ArduinoJson/Polyfills/pgmspace_generic.hpp
+.......... /ArduinoJson/src/ArduinoJson/Numbers/JsonFloat.hpp
+......... /ArduinoJson/src/ArduinoJson/Strings/JsonString.hpp
+.......... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ostream
+........... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ios
+............ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/char_traits.h
+............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cwchar
+............ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/localefwd.h
+............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/c++locale.h
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/clocale
+............... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/locale.h
+................ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cctype
+............ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/ios_base.h
+............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/locale_classes.h
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/string
+............... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/ostream_insert.h
+................ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/cxxabi_forced.h
+............... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/basic_string.h
+................ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/string_view
+................. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/string_view.tcc
+................ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/ext/string_conversions.h
+................. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstdlib
+................. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cwchar
+................. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstdio
+................. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cerrno
+.................. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/errno.h
+................... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/errno.h
+................ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/charconv.h
+............... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/basic_string.tcc
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/locale_classes.tcc
+............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/system_error
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/error_constants.h
+............... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cerrno
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdexcept
+............ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/streambuf
+............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/streambuf.tcc
+............ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/basic_ios.h
+............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/locale_facets.h
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cwctype
+............... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/wctype.h
+................ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cctype
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/ctype_base.h
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/streambuf_iterator.h
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/ctype_inline.h
+.............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/locale_facets.tcc
+............. /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/basic_ios.tcc
+........... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/ostream.tcc
+......... /ArduinoJson/src/ArduinoJson/Variant/VariantContent.hpp
+.......... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.......... /ArduinoJson/src/ArduinoJson/Array/ArrayData.hpp
+........... /ArduinoJson/src/ArduinoJson/Collection/CollectionData.hpp
+............ /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+.......... /ArduinoJson/src/ArduinoJson/Numbers/JsonInteger.hpp
+.......... /ArduinoJson/src/ArduinoJson/Object/ObjectData.hpp
+....... /ArduinoJson/src/ArduinoJson/Strings/IsString.hpp
+....... /ArduinoJson/src/ArduinoJson/Variant/VariantAttorney.hpp
+........ /ArduinoJson/src/ArduinoJson/Variant/VariantTo.hpp
+....... /ArduinoJson/src/ArduinoJson/Variant/VariantOperators.hpp
+........ /ArduinoJson/src/ArduinoJson/Numbers/arithmeticCompare.hpp
+........ /ArduinoJson/src/ArduinoJson/Variant/VariantTag.hpp
+.... /ArduinoJson/src/ArduinoJson/Array/JsonArrayConst.hpp
+..... /ArduinoJson/src/ArduinoJson/Array/JsonArrayIterator.hpp
+...... /ArduinoJson/src/ArduinoJson/Variant/JsonVariant.hpp
+... /ArduinoJson/src/ArduinoJson/Object/JsonObject.hpp
+.... /ArduinoJson/src/ArduinoJson/Object/JsonObjectConst.hpp
+..... /ArduinoJson/src/ArduinoJson/Object/JsonObjectIterator.hpp
+...... /ArduinoJson/src/ArduinoJson/Object/JsonPair.hpp
+.... /ArduinoJson/src/ArduinoJson/Object/MemberProxy.hpp
+... /ArduinoJson/src/ArduinoJson/Document/JsonDocument.hpp
+... /ArduinoJson/src/ArduinoJson/Array/ArrayImpl.hpp
+.... /ArduinoJson/src/ArduinoJson/Variant/VariantCompare.hpp
+..... /ArduinoJson/src/ArduinoJson/Variant/JsonVariantVisitor.hpp
+...... /ArduinoJson/src/ArduinoJson/Variant/VariantDataVisitor.hpp
+... /ArduinoJson/src/ArduinoJson/Array/Utilities.hpp
+... /ArduinoJson/src/ArduinoJson/Collection/CollectionImpl.hpp
+.... /ArduinoJson/src/ArduinoJson/Memory/Alignment.hpp
+..... /files/sdkEsp8266/tools/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/10.3.0/include/stddef.h
+... /ArduinoJson/src/ArduinoJson/Memory/ResourceManagerImpl.hpp
+... /ArduinoJson/src/ArduinoJson/Object/ObjectImpl.hpp
+... /ArduinoJson/src/ArduinoJson/Variant/ConverterImpl.hpp
+.... /ArduinoJson/src/ArduinoJson/Json/JsonSerializer.hpp
+..... /ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp
+...... /ArduinoJson/src/ArduinoJson/Json/EscapeSequence.hpp
+...... /ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp
+...... /ArduinoJson/src/ArduinoJson/Serialization/CountingDecorator.hpp
+..... /ArduinoJson/src/ArduinoJson/Serialization/measure.hpp
+...... /ArduinoJson/src/ArduinoJson/Serialization/Writers/DummyWriter.hpp
+..... /ArduinoJson/src/ArduinoJson/Serialization/serialize.hpp
+...... /ArduinoJson/src/ArduinoJson/Serialization/Writer.hpp
+....... /ArduinoJson/src/ArduinoJson/Serialization/Writers/StaticStringWriter.hpp
+....... /ArduinoJson/src/ArduinoJson/Serialization/Writers/StdStringWriter.hpp
+....... /ArduinoJson/src/ArduinoJson/Serialization/Writers/ArduinoStringWriter.hpp
+........ /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+....... /ArduinoJson/src/ArduinoJson/Serialization/Writers/StdStreamWriter.hpp
+....... /ArduinoJson/src/ArduinoJson/Serialization/Writers/PrintWriter.hpp
+........ /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+.... /ArduinoJson/src/ArduinoJson/Memory/StringBuilder.hpp
+... /ArduinoJson/src/ArduinoJson/Variant/JsonVariantCopier.hpp
+... /ArduinoJson/src/ArduinoJson/Variant/VariantImpl.hpp
+... /ArduinoJson/src/ArduinoJson/Variant/VariantRefBaseImpl.hpp
+... /ArduinoJson/src/ArduinoJson/Json/JsonDeserializer.hpp
+.... /ArduinoJson/src/ArduinoJson/Deserialization/deserialize.hpp
+..... /ArduinoJson/src/ArduinoJson/Deserialization/DeserializationError.hpp
+..... /ArduinoJson/src/ArduinoJson/Deserialization/DeserializationOptions.hpp
+...... /ArduinoJson/src/ArduinoJson/Deserialization/Filter.hpp
+...... /ArduinoJson/src/ArduinoJson/Deserialization/NestingLimit.hpp
+..... /ArduinoJson/src/ArduinoJson/Deserialization/Reader.hpp
+...... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/stdlib.h
+...... /ArduinoJson/src/ArduinoJson/Deserialization/Readers/IteratorReader.hpp
+...... /ArduinoJson/src/ArduinoJson/Deserialization/Readers/RamReader.hpp
+...... /ArduinoJson/src/ArduinoJson/Deserialization/Readers/VariantReader.hpp
+...... /ArduinoJson/src/ArduinoJson/Deserialization/Readers/ArduinoStreamReader.hpp
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+...... /ArduinoJson/src/ArduinoJson/Deserialization/Readers/ArduinoStringReader.hpp
+....... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+...... /ArduinoJson/src/ArduinoJson/Deserialization/Readers/FlashReader.hpp
+...... /ArduinoJson/src/ArduinoJson/Deserialization/Readers/StdStreamReader.hpp
+....... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/istream
+........ /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/istream.tcc
+.... /ArduinoJson/src/ArduinoJson/Json/Latch.hpp
+.... /ArduinoJson/src/ArduinoJson/Json/Utf16.hpp
+.... /ArduinoJson/src/ArduinoJson/Json/Utf8.hpp
+.... /ArduinoJson/src/ArduinoJson/Numbers/parseNumber.hpp
+..... /ArduinoJson/src/ArduinoJson/Polyfills/ctype.hpp
+... /ArduinoJson/src/ArduinoJson/Json/PrettyJsonSerializer.hpp
+... /ArduinoJson/src/ArduinoJson/MsgPack/MsgPackBinary.hpp
+... /ArduinoJson/src/ArduinoJson/MsgPack/MsgPackDeserializer.hpp
+.... /ArduinoJson/src/ArduinoJson/Memory/StringBuffer.hpp
+.... /ArduinoJson/src/ArduinoJson/MsgPack/endianness.hpp
+.... /ArduinoJson/src/ArduinoJson/MsgPack/ieee754.hpp
+... /ArduinoJson/src/ArduinoJson/MsgPack/MsgPackExtension.hpp
+... /ArduinoJson/src/ArduinoJson/MsgPack/MsgPackSerializer.hpp
+... /ArduinoJson/src/ArduinoJson/compatibility.hpp
+. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266mDNS/src/ESP8266mDNS.h
+.. /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266mDNS/src/LEAmDNS.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiUdp.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Udp.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/include/slist.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/udp.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/ip.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/ip4.h
+...... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/prot/ip4.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/ip6.h
+..... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/prot/ip.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip/prot/udp.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/include/UdpContext.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/assert.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/AddrList.h
+... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/map
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_tree.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_map.h
+.... /files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/bits/stl_multimap.h
+. /MPU9250_WE/src/MPU9250_WE.h
+.. /MPU9250_WE/src/MPU6500_WE.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/Wire/Wire.h
+... /files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/SPI/SPI.h
+.... /files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/Arduino.h
+... /MPU9250_WE/src/xyzFloat.h
+.... /MPU9250_WE/src/xyzFloat.h
+sketch_oct01b.ino:162:33: error: 'MPU_ADDRESS' was not declared in this scope
+sketch_oct01b.ino: In function 'void checkMpuTilt()':
+sketch_oct01b.ino:379:11: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:379:23: error: 'tiltTopic' was not declared in this scope
+sketch_oct01b.ino: In function 'void attemptWifiReconnect()':
+sketch_oct01b.ino:420:7: error: 'primarySsid' was not declared in this scope
+sketch_oct01b.ino:420:36: error: 'safetySsid' was not declared in this scope
+sketch_oct01b.ino:422:29: error: 'primarySsid' was not declared in this scope
+sketch_oct01b.ino:423:29: error: 'primaryGaveUp' was not declared in this scope
+sketch_oct01b.ino:424:40: error: 'disconnectedSince' was not declared in this scope
+sketch_oct01b.ino:424:60: error: 'PRIMARY_TIMEOUT_MS' was not declared in this scope
+sketch_oct01b.ino:426:28: error: 'safetySsid' was not declared in this scope
+sketch_oct01b.ino:431:39: error: 'primaryPassword' was not declared in this scope
+sketch_oct01b.ino:432:7: error: 'wifiAttemptSlot' was not declared in this scope
+sketch_oct01b.ino:432:25: error: 'SLOT_PRIMARY' was not declared in this scope
+sketch_oct01b.ino:440:36: error: 'safetyPassword' was not declared in this scope
+sketch_oct01b.ino:441:5: error: 'wifiAttemptSlot' was not declared in this scope
+sketch_oct01b.ino:441:23: error: 'SLOT_SAFETY' was not declared in this scope
+sketch_oct01b.ino: In function 'void checkPrimaryRecovery()':
+sketch_oct01b.ino:450:7: error: 'primarySsid' was not declared in this scope
+sketch_oct01b.ino:452:13: error: 'lastPrimaryRecheck' was not declared in this scope
+sketch_oct01b.ino:452:34: error: 'PRIMARY_RECHECK_MS' was not declared in this scope
+sketch_oct01b.ino:453:3: error: 'lastPrimaryRecheck' was not declared in this scope
+sketch_oct01b.ino:456:14: error: 'primarySsid' was not declared in this scope
+sketch_oct01b.ino:456:35: error: 'primaryPassword' was not declared in this scope
+sketch_oct01b.ino:457:3: error: 'wifiAttemptSlot' was not declared in this scope
+sketch_oct01b.ino:457:21: error: 'SLOT_PRIMARY' was not declared in this scope
+sketch_oct01b.ino:460:69: error: 'WIFI_CONNECT_TIMEOUT_MS' was not declared in this scope
+sketch_oct01b.ino:462:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:465:40: error: 'safetySsid' was not declared in this scope
+sketch_oct01b.ino:468:36: error: 'safetyPassword' was not declared in this scope
+sketch_oct01b.ino:469:23: error: 'SLOT_SAFETY' was not declared in this scope
+sketch_oct01b.ino:471:72: error: 'WIFI_CONNECT_TIMEOUT_MS' was not declared in this scope
+sketch_oct01b.ino:473:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'bool connectAndVerify(const String&, const String&, bool)':
+sketch_oct01b.ino:504:21: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'const char* activeSlotName()':
+sketch_oct01b.ino:512:10: error: 'usingSafetyNetwork' was not declared in this scope
+sketch_oct01b.ino: In function 'void handleWifiConnection()':
+sketch_oct01b.ino:521:9: error: 'wifiConnectedSlot' was not declared in this scope
+sketch_oct01b.ino:521:30: error: 'SLOT_NONE' was not declared in this scope; did you mean 'DST_NONE'?
+sketch_oct01b.ino:524:7: error: 'disconnectedSince' was not declared in this scope
+sketch_oct01b.ino:525:7: error: 'primaryGaveUp' was not declared in this scope
+sketch_oct01b.ino:527:9: error: 'disconnectedSince' was not declared in this scope
+sketch_oct01b.ino:529:15: error: 'lastWifiRetry' was not declared in this scope
+sketch_oct01b.ino:529:31: error: 'WIFI_RETRY_MS' was not declared in this scope
+sketch_oct01b.ino:537:7: error: 'wifiConnectedSlot' was not declared in this scope
+sketch_oct01b.ino:537:28: error: 'wifiAttemptSlot' was not declared in this scope
+sketch_oct01b.ino:539:5: error: 'usingSafetyNetwork' was not declared in this scope
+sketch_oct01b.ino:539:48: error: 'SLOT_SAFETY' was not declared in this scope
+sketch_oct01b.ino:544:9: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:545:29: error: 'storedTopic' was not declared in this scope
+sketch_oct01b.ino:545:7: error: 'sendNtfyMessageTagged' was not declared in this scope; did you mean 'sendNtfyMessage'?
+sketch_oct01b.ino:553:7: error: 'usingSafetyNetwork' was not declared in this scope
+sketch_oct01b.ino: In function 'bool sendNtfyMessageTagged(const String&, const String&, const String&, const String&)':
+sketch_oct01b.ino:580:41: error: 'readBatteryVoltage' was not declared in this scope
+sketch_oct01b.ino:580:24: error: 'voltageToPercent' was not declared in this scope
+sketch_oct01b.ino: In function 'void setLed(bool, bool)':
+sketch_oct01b.ino:611:5: error: 'ledActive' was not declared in this scope
+sketch_oct01b.ino:612:5: error: 'ledLitAt' was not declared in this scope
+sketch_oct01b.ino:614:5: error: 'ledActive' was not declared in this scope
+sketch_oct01b.ino: In function 'void checkLedTimeout()':
+sketch_oct01b.ino:619:7: error: 'ledActive' was not declared in this scope
+sketch_oct01b.ino:619:32: error: 'ledLitAt' was not declared in this scope
+sketch_oct01b.ino: In function 'void pollReplyTopic()':
+sketch_oct01b.ino:626:8: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:627:8: error: 'awaitingReply' was not declared in this scope
+sketch_oct01b.ino:630:13: error: 'lastReplyPoll' was not declared in this scope
+sketch_oct01b.ino:631:3: error: 'lastReplyPoll' was not declared in this scope
+sketch_oct01b.ino:634:13: error: 'lastButtonPress' was not declared in this scope
+sketch_oct01b.ino:635:5: error: 'awaitingReply' was not declared in this scope
+sketch_oct01b.ino:644:23: error: 'storedTopic' was not declared in this scope
+sketch_oct01b.ino:686:22: error: 'lastHandledReplyTime' was not declared in this scope
+sketch_oct01b.ino:690:9: error: 'awaitingReply' was not declared in this scope
+sketch_oct01b.ino:691:9: error: 'lastHandledReplyTime' was not declared in this scope
+sketch_oct01b.ino:696:9: error: 'awaitingReply' was not declared in this scope
+sketch_oct01b.ino:697:9: error: 'lastHandledReplyTime' was not declared in this scope
+sketch_oct01b.ino: In function 'void routePair()':
+sketch_oct01b.ino:707:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void routeVerify()':
+sketch_oct01b.ino:712:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void routeBattery()':
+sketch_oct01b.ino:717:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void routePing()':
+sketch_oct01b.ino:722:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void routeWifiConfig()':
+sketch_oct01b.ino:727:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void routeStandInfo()':
+sketch_oct01b.ino:732:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void routeLinkViewer()':
+sketch_oct01b.ino:740:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void routeRevokeViewers()':
+sketch_oct01b.ino:745:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void handlePair()':
+sketch_oct01b.ino:781:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:786:54: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:803:7: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:804:9: error: 'simpleHash' was not declared in this scope
+sketch_oct01b.ino:804:33: error: 'storedPasswordHash' was not declared in this scope
+sketch_oct01b.ino:810:5: error: 'storedPhoneLabel' was not declared in this scope
+sketch_oct01b.ino:811:5: error: 'saveConfig' was not declared in this scope
+sketch_oct01b.ino:815:20: error: 'storedTopic' was not declared in this scope
+sketch_oct01b.ino:816:24: error: 'tiltTopic' was not declared in this scope
+sketch_oct01b.ino:825:3: error: 'storedPasswordHash' was not declared in this scope
+sketch_oct01b.ino:825:24: error: 'simpleHash' was not declared in this scope
+sketch_oct01b.ino:826:3: error: 'storedPhoneLabel' was not declared in this scope
+sketch_oct01b.ino:827:3: error: 'storedTopic' was not declared in this scope
+sketch_oct01b.ino:827:17: error: 'generateTopic' was not declared in this scope
+sketch_oct01b.ino:831:3: error: 'tiltTopic' was not declared in this scope
+sketch_oct01b.ino:832:3: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:833:3: error: 'saveConfig' was not declared in this scope
+sketch_oct01b.ino: In function 'void handleVerify()':
+sketch_oct01b.ino:849:8: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:850:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:855:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:860:54: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:867:7: error: 'simpleHash' was not declared in this scope
+sketch_oct01b.ino:867:31: error: 'storedPasswordHash' was not declared in this scope
+sketch_oct01b.ino: In function 'void handleBattery()':
+sketch_oct01b.ino:878:19: error: 'readBatteryVoltage' was not declared in this scope
+sketch_oct01b.ino:879:17: error: 'voltageToPercent' was not declared in this scope
+sketch_oct01b.ino:888:3: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void handleWifiConfig()':
+sketch_oct01b.ino:902:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:907:54: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:930:7: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:931:9: error: 'simpleHash' was not declared in this scope
+sketch_oct01b.ino:931:40: error: 'storedPasswordHash' was not declared in this scope
+sketch_oct01b.ino:945:5: error: 'safetySsid' was not declared in this scope
+sketch_oct01b.ino:946:5: error: 'safetyPassword' was not declared in this scope; did you mean 'newPassword'?
+sketch_oct01b.ino:948:5: error: 'primarySsid' was not declared in this scope
+sketch_oct01b.ino:949:5: error: 'primaryPassword' was not declared in this scope
+sketch_oct01b.ino:951:3: error: 'saveConfig' was not declared in this scope
+sketch_oct01b.ino:960:3: error: 'wifiAttemptSlot' was not declared in this scope
+sketch_oct01b.ino:960:36: error: 'SLOT_SAFETY' was not declared in this scope
+sketch_oct01b.ino:960:50: error: 'SLOT_PRIMARY' was not declared in this scope
+sketch_oct01b.ino: In function 'void handleLinkViewer()':
+sketch_oct01b.ino:987:8: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:988:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:992:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:997:54: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:1010:7: error: 'simpleHash' was not declared in this scope
+sketch_oct01b.ino:1010:31: error: 'storedPasswordHash' was not declared in this scope
+sketch_oct01b.ino:1020:27: error: 'viewerPhones' was not declared in this scope; did you mean 'viewerPhone'?
+sketch_oct01b.ino:1028:25: error: 'MAX_VIEWERS' was not declared in this scope
+sketch_oct01b.ino:1034:5: error: 'saveConfig' was not declared in this scope
+sketch_oct01b.ino:1039:22: error: 'tiltTopic' was not declared in this scope
+sketch_oct01b.ino: In function 'void handleRevokeViewers()':
+sketch_oct01b.ino:1055:8: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:1056:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:1060:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:1065:54: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:1072:7: error: 'simpleHash' was not declared in this scope
+sketch_oct01b.ino:1072:31: error: 'storedPasswordHash' was not declared in this scope
+sketch_oct01b.ino:1079:3: error: 'tiltTopic' was not declared in this scope
+sketch_oct01b.ino:1079:15: error: 'generateTopic' was not declared in this scope
+sketch_oct01b.ino:1080:3: error: 'viewerPhones' was not declared in this scope
+sketch_oct01b.ino:1081:3: error: 'saveConfig' was not declared in this scope
+sketch_oct01b.ino: In function 'void handleStandInfo()':
+sketch_oct01b.ino:1101:7: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:1103:24: error: 'standLabel' was not declared in this scope
+sketch_oct01b.ino:1112:5: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:1117:54: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino:1126:7: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:1127:9: error: 'simpleHash' was not declared in this scope
+sketch_oct01b.ino:1127:40: error: 'storedPasswordHash' was not declared in this scope
+sketch_oct01b.ino:1135:3: error: 'standLabel' was not declared in this scope
+sketch_oct01b.ino:1136:3: error: 'saveConfig' was not declared in this scope
+sketch_oct01b.ino: In function 'String locationContext()':
+sketch_oct01b.ino:1150:18: error: 'standLabel' was not declared in this scope
+sketch_oct01b.ino:1151:7: error: 'usingSafetyNetwork' was not declared in this scope
+sketch_oct01b.ino: In function 'void handlePing()':
+sketch_oct01b.ino:1171:3: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void handleNotFound()':
+sketch_oct01b.ino:1175:3: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void checkButton()':
+sketch_oct01b.ino:1200:13: error: 'lastButtonPress' was not declared in this scope
+sketch_oct01b.ino:1203:9: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:1204:33: error: 'storedTopic' was not declared in this scope
+sketch_oct01b.ino:1208:9: error: 'awaitingReply' was not declared in this scope
+sketch_oct01b.ino: In function 'void checkLowBattery()':
+sketch_oct01b.ino:1220:13: error: 'lastBatteryCheck' was not declared in this scope
+sketch_oct01b.ino:1223:36: error: 'readBatteryVoltage' was not declared in this scope
+sketch_oct01b.ino:1223:19: error: 'voltageToPercent' was not declared in this scope
+sketch_oct01b.ino:1225:12: error: 'lowBatteryAlertSent' was not declared in this scope
+sketch_oct01b.ino:1225:35: error: 'isPaired' was not declared in this scope
+sketch_oct01b.ino:1226:25: error: 'storedTopic' was not declared in this scope
+sketch_oct01b.ino:1230:7: error: 'lowBatteryAlertSent' was not declared in this scope
+sketch_oct01b.ino: In function 'void setup()':
+sketch_oct01b.ino:1255:3: error: 'loadConfig' was not declared in this scope
+sketch_oct01b.ino:1266:5: error: 'primarySsid' was not declared in this scope
+sketch_oct01b.ino:1266:23: error: 'primaryPassword' was not declared in this scope
+sketch_oct01b.ino:1267:5: error: 'safetySsid' was not declared in this scope
+sketch_oct01b.ino:1267:23: error: 'safetyPassword' was not declared in this scope
+sketch_oct01b.ino:1268:5: error: 'saveConfig' was not declared in this scope
+sketch_oct01b.ino:1293:3: error: 'server' was not declared in this scope; did you mean 'Server'?
+sketch_oct01b.ino: In function 'void checkSerialWifiConfig()':
+sketch_oct01b.ino:1358:15: error: 'safetySsid' was not declared in this scope
+sketch_oct01b.ino:1359:15: error: 'safetyPassword' was not declared in this scope; did you mean 'newPassword'?
+sketch_oct01b.ino:1361:15: error: 'primarySsid' was not declared in this scope
+sketch_oct01b.ino:1362:15: error: 'primaryPassword' was not declared in this scope
+sketch_oct01b.ino:1364:13: error: 'saveConfig' was not declared in this scope
+sketch_oct01b.ino:1365:13: error: 'wifiAttemptSlot' was not declared in this scope
+sketch_oct01b.ino:1365:46: error: 'SLOT_SAFETY' was not declared in this scope
+sketch_oct01b.ino:1365:60: error: 'SLOT_PRIMARY' was not declared in this scope
+sketch_oct01b.ino: In function 'void loop()':
+sketch_oct01b.ino:1392:3: error: 'server' was not declared in this scope; did you mean 'Server'?
+Multiple include guards may be useful for:
+/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/clocale
+/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cstdio
+/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/cwctype
+/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/ctype_base.h
+/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/c++/10.3.0/xtensa-lx106-elf/bits/ctype_inline.h
+/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/_endian.h
+/files/sdkEsp8266/tools/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/types.h
+/files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/core_version.h
+/files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/esp8266_undocumented.h
+/files/sdkEsp8266/hardware/esp8266/3.1.2/cores/esp8266/umm_malloc/umm_malloc_cfgport.h
+/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/ESP8266WebServer-impl.h
+/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WebServer/src/Parsing-impl.h
+/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiClientSecure.h
+/files/sdkEsp8266/hardware/esp8266/3.1.2/libraries/ESP8266WiFi/src/WiFiServerSecure.h
+/files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwip-err-t.h
+/files/sdkEsp8266/hardware/esp8266/3.1.2/tools/sdk/lwip2/include/lwipopts.h
+/ArduinoJson/src/ArduinoJson/compatibility.hpp
+
