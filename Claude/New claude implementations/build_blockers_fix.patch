@@ -1,0 +1,180 @@
+diff -ruN '--exclude=gradlew' '--exclude=gradlew.bat' orig_snapshot/app/build.gradle.kts work/app/build.gradle.kts
+--- orig_snapshot/app/build.gradle.kts	2026-10-03 00:39:49.375163408 +0000
++++ work/app/build.gradle.kts	2026-10-03 00:39:49.394149652 +0000
+@@ -1,12 +1,9 @@
+-import com.google.gms.googleservices.GoogleServicesPlugin.MissingGoogleServicesStrategy
+-
+ plugins {
+   alias(libs.plugins.android.application)
+   alias(libs.plugins.kotlin.compose)
+   alias(libs.plugins.google.devtools.ksp)
+   alias(libs.plugins.roborazzi)
+   alias(libs.plugins.secrets)
+-  alias(libs.plugins.google.services)
+ }
+ 
+ android {
+@@ -68,16 +65,12 @@
+ secrets {
+   propertiesFileName = ".env"
+   defaultPropertiesFileName = ".env.example"
+-  ignoreList.add("FIREBASE_APPCHECK_DEBUG_TOKEN")
+ }
+ 
+-googleServices { missingGoogleServicesStrategy = MissingGoogleServicesStrategy.WARN }
+-
+ // Some unused dependencies are commented out below instead of being removed.
+ // This makes it easy to add them back in the future if needed.
+ dependencies {
+   implementation(platform(libs.androidx.compose.bom))
+-  implementation(platform(libs.firebase.bom))
+   // implementation(libs.accompanist.permissions)
+   implementation(libs.androidx.activity.compose)
+   // implementation(libs.androidx.camera.camera2)
+@@ -102,17 +95,6 @@
+   implementation(libs.haze)
+   implementation(libs.coil.compose)
+   implementation(libs.converter.moshi)
+-  implementation(libs.firebase.ai)
+-  // Uncomment to use Firestore:
+-  // implementation(libs.firebase.firestore)
+-
+-  // Uncomment ALL FOUR of the following dependencies together to use Firebase Auth and Google
+-  // Sign-In via Credential Manager:
+-  // implementation(libs.firebase.auth)
+-  // implementation(libs.androidx.credentials)
+-  // implementation(libs.androidx.credentials.play.services)
+-  // implementation(libs.googleid)
+-  implementation(libs.firebase.appcheck.recaptcha)
+   implementation(libs.kotlinx.coroutines.android)
+   implementation(libs.kotlinx.coroutines.core)
+   implementation(libs.logging.interceptor)
+diff -ruN '--exclude=gradlew' '--exclude=gradlew.bat' orig_snapshot/app/src/main/AndroidManifest.xml work/app/src/main/AndroidManifest.xml
+--- orig_snapshot/app/src/main/AndroidManifest.xml	2026-10-03 00:39:49.377077812 +0000
++++ work/app/src/main/AndroidManifest.xml	2026-10-03 00:39:49.393832518 +0000
+@@ -46,6 +46,7 @@
+             android:exported="false">
+             <intent-filter>
+                 <action android:name="com.example.autoalert.ACTION_REPLY" />
++                <action android:name="com.example.autoalert.ACTION_SAFETY_COMING" />
+             </intent-filter>
+         </receiver>
+     </application>
+diff -ruN '--exclude=gradlew' '--exclude=gradlew.bat' orig_snapshot/build.gradle.kts work/build.gradle.kts
+--- orig_snapshot/build.gradle.kts	2026-10-03 00:39:49.375045354 +0000
++++ work/build.gradle.kts	2026-10-03 00:39:49.394324149 +0000
+@@ -5,5 +5,4 @@
+   alias(libs.plugins.google.devtools.ksp) apply false
+   alias(libs.plugins.roborazzi) apply false
+   alias(libs.plugins.secrets) apply false
+-  alias(libs.plugins.google.services) apply false
+ }
+diff -ruN '--exclude=gradlew' '--exclude=gradlew.bat' orig_snapshot/gradle/libs.versions.toml work/gradle/libs.versions.toml
+--- orig_snapshot/gradle/libs.versions.toml	2026-10-03 00:39:49.377172056 +0000
++++ work/gradle/libs.versions.toml	2026-10-03 00:39:49.395033434 +0000
+@@ -36,9 +36,7 @@
+ datastorePreferences = "1.1.7"
+ robolectric = "4.16.1"
+ roborazzi = "1.59.0"
+-firebaseBom = "34.15.0"
+ secretsGradlePlugin = "2.0.1"
+-googleServices = "4.5.0"
+ credentials = "1.5.0"
+ googleid = "1.1.1"
+ haze = "1.6.0"
+@@ -92,11 +90,6 @@
+ roborazzi = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version.ref = "roborazzi" }
+ roborazzi-compose = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose", version.ref = "roborazzi" }
+ roborazzi-junit-rule = { group = "io.github.takahirom.roborazzi", name = "roborazzi-junit-rule", version.ref = "roborazzi" }
+-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+-firebase-ai = { group = "com.google.firebase", name = "firebase-ai" }
+-firebase-appcheck-recaptcha = { group = "com.google.firebase", name = "firebase-appcheck-recaptcha" }
+-firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore" }
+-firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
+ androidx-credentials = { group = "androidx.credentials", name = "credentials", version.ref = "credentials" }
+ androidx-credentials-play-services = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "credentials" }
+ googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
+@@ -110,4 +103,3 @@
+ google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "googleDevtoolsKsp" }
+ roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
+ secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secretsGradlePlugin" }
+-google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+diff -ruN '--exclude=gradlew' '--exclude=gradlew.bat' orig_snapshot/gradle/wrapper/gradle-wrapper.properties work/gradle/wrapper/gradle-wrapper.properties
+--- orig_snapshot/gradle/wrapper/gradle-wrapper.properties	1970-01-01 00:00:00.000000000 +0000
++++ work/gradle/wrapper/gradle-wrapper.properties	2026-10-03 00:39:49.397340482 +0000
+@@ -0,0 +1,7 @@
++distributionBase=GRADLE_USER_HOME
++distributionPath=wrapper/dists
++distributionSha256Sum=b266d5ff6b90eada6dc3b20cb090e3731302e553a27c5d3e4df1f0d76beaff06
++distributionUrl=https\://services.gradle.org/distributions/gradle-9.3.1-bin.zip
++networkTimeout=10000
++validateDistributionUrl=true
++zipStoreBase=GRADLE_USER_HOME
+diff -ruN '--exclude=gradlew' '--exclude=gradlew.bat' orig_snapshot/gradle.properties work/gradle.properties
+--- orig_snapshot/gradle.properties	2026-10-03 00:39:49.377139903 +0000
++++ work/gradle.properties	2026-10-03 00:39:49.394476678 +0000
+@@ -24,5 +24,3 @@
+ # Set the Kotlin compiler execution strategy to in-process to avoid "Could not
+ # connect to Kotlin compile daemon" error.
+ kotlin.compiler.execution.strategy=in-process
+-# Allow the google-services plugin to work even if the google-services.json is not present.
+-googleServices.missing.passthrough=true
+--- /dev/null	2026-10-02 23:10:33.187881189 +0000
++++ work/gradlew	2026-10-03 00:40:00.525591938 +0000
+@@ -0,0 +1,37 @@
++#!/bin/sh
++#
++# Minimal Gradle wrapper launcher (POSIX sh). Runs the wrapper JAR, which downloads and
++# runs the Gradle version pinned in gradle/wrapper/gradle-wrapper.properties (9.3.1).
++# REQUIRES gradle/wrapper/gradle-wrapper.jar (see README note / regenerate with
++# `gradle wrapper --gradle-version 9.3.1`, which overwrites this script with the official one).
++
++app_path=$0
++while [ -h "$app_path" ]; do
++    ls=$( ls -ld -- "$app_path" )
++    link=${ls#*' -> '}
++    case $link in
++      /*) app_path=$link ;;
++      *) app_path=${app_path%/*}/$link ;;
++    esac
++done
++APP_HOME=$( cd -P "${app_path%/*}" > /dev/null && pwd -P ) || exit
++
++CLASSPATH="$APP_HOME/gradle/wrapper/gradle-wrapper.jar"
++if [ ! -f "$CLASSPATH" ]; then
++    echo "ERROR: $CLASSPATH is missing." >&2
++    echo "Generate it once with a local Gradle 9.3.1+:  gradle wrapper --gradle-version 9.3.1" >&2
++    exit 1
++fi
++
++if [ -n "$JAVA_HOME" ]; then
++    JAVACMD=$JAVA_HOME/bin/java
++    [ -x "$JAVACMD" ] || { echo "ERROR: JAVA_HOME is invalid: $JAVA_HOME" >&2; exit 1; }
++else
++    JAVACMD=java
++    command -v java >/dev/null 2>&1 || { echo "ERROR: JAVA_HOME is not set and no 'java' found in PATH." >&2; exit 1; }
++fi
++
++exec "$JAVACMD" -Xmx64m -Xms64m -Dfile.encoding=UTF-8 \
++    "-Dorg.gradle.appname=gradlew" \
++    -classpath "$CLASSPATH" \
++    org.gradle.wrapper.GradleWrapperMain "$@"
+--- /dev/null	2026-10-02 23:10:33.187881189 +0000
++++ work/gradlew.bat	2026-10-03 00:40:00.527946013 +0000
+@@ -0,0 +1,16 @@
++@rem Minimal Gradle wrapper launcher (Windows). Requires gradle\wrapper\gradle-wrapper.jar.
++@rem Regenerate the official files with: gradle wrapper --gradle-version 9.3.1
++@echo off
++setlocal
++set DIRNAME=%~dp0
++if "%DIRNAME%"=="" set DIRNAME=.
++set APP_HOME=%DIRNAME%
++set CLASSPATH=%APP_HOME%gradle\wrapper\gradle-wrapper.jar
++if not exist "%CLASSPATH%" (
++  echo ERROR: %CLASSPATH% is missing. 1>&2
++  echo Generate it once with: gradle wrapper --gradle-version 9.3.1 1>&2
++  exit /b 1
++)
++if defined JAVA_HOME (set JAVA_EXE=%JAVA_HOME%\bin\java.exe) else (set JAVA_EXE=java.exe)
++"%JAVA_EXE%" -Xmx64m -Xms64m -Dfile.encoding=UTF-8 "-Dorg.gradle.appname=gradlew" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
++endlocal
